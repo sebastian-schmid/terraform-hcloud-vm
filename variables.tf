@@ -33,7 +33,7 @@ variable "volume_filesystem" {
   default = "ext4"
 }
 variable "ansible_hostgroup_name" {
-  defautl = "hosts"
+  default = "hosts"
 }
 variable "ansible_inventory_path" {
   default = "ansible/inventory/group_vars/"
