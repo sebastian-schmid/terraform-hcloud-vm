@@ -16,6 +16,7 @@ module "terraform_hcloud_vm" {
 
   ssh_public_key  = var.ssh_public_key
   vms             = var.vms
+  volume_size     = var.volume_size
 }
 
 ```
@@ -28,12 +29,14 @@ ssh_public_key = "~/.ssh/id_rsa.pub"
 
 vms = {
   1 = {
-    name               = "hostname"
-    private_ip_address = "10.10.0.1"
+    name               = "playground.somedomain.de"
+    private_ip_address = "10.10.0.2"
     server_type        = "cx11"
     image              = "debian-10"
     location           = "fsn1"
     backups            = false
   },
 }
+
+volume_size = 10
 ```
