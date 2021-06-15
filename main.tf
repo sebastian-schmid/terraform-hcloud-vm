@@ -95,6 +95,7 @@ resource "local_file" "hosts" {
   content = templatefile("${path.module}/templates/hosts.tpl",
     {
       vms = hcloud_server.vms
+      ansible_hostgroup_name = var.ansible_hostgroup_name
     }
   )
   filename = "${var.ansible_inventory_path}/${var.ansible_inventory_filename}"
