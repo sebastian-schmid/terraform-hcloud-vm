@@ -20,9 +20,6 @@ variable "private_network_name" {
 variable "private_network_zone" {
   default = "eu-central"
 }
-variable "floating_ip_name" {
-  default = "default"
-}
 variable "ansible_hostgroup_name" {
   default = "hosts"
 }

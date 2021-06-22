@@ -60,8 +60,6 @@ private_network_name = "default"
 
 private_network_zone = "eu-central"
 
-floating_ip_name = "default"
-
 ansible_hostgroup_name = "hosts"
 
 ansible_inventory_path = "ansible/inventory/group_vars/"
