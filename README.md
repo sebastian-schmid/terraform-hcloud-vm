@@ -4,11 +4,13 @@ This Terraform module will provision one or more virtual servers on [hcloud](htt
 
 ## Features
 
-* all virtual servers will end up connected in the same private network.
+- minimal required variables and working defaults you can customize to your needs
 
-* an ansible inventory file will be generated
+- rdns for IPv4 and IPv6 will be set
 
-* minimal required variables and working defaults you can customize to your needs
+- all virtual servers will end up connected in the same private network.
+
+- an ansible inventory file will be generated
 
 ## Quick Start
 
@@ -44,6 +46,8 @@ vms = {
   },
 }
 ```
+
+`name` will be used as server name and for rdns entry
 
 ## Optional variables
 
