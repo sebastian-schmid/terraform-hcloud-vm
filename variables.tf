@@ -23,15 +23,6 @@ variable "private_network_zone" {
 variable "floating_ip_name" {
   default = "default"
 }
-variable "volume_name" {
-  default = "volume"
-}
-variable "volume_size" {
-  default = "0"
-}
-variable "volume_filesystem" {
-  default = "ext4"
-}
 variable "ansible_hostgroup_name" {
   default = "hosts"
 }
@@ -40,7 +31,4 @@ variable "ansible_inventory_path" {
 }
 variable "ansible_inventory_filename" {
   default = "hosts.ini"
-}
-variable "ansible_volumes_filename" {
-  default = "volumes.yml"
 }
