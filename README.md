@@ -4,8 +4,6 @@ This terraform module will provision one or more virtual machines on hcloud (Het
 
 All virtual servers will end up connected in the same private network.
 
-If you don't need an external volume on a virtual server just set the volume size to 0. This will throw an warning/error by terraform but does not break the terraform apply run.
-
 ## Quick Start
 
 main.tf
@@ -16,9 +14,7 @@ module "terraform_hcloud_vm" {
 
   ssh_public_key  = var.ssh_public_key
   vms             = var.vms
-  volume_size     = var.volume_size
 }
-
 ```
 
 terraform.tfvars
@@ -37,6 +33,4 @@ vms = {
     backups            = false
   },
 }
-
-volume_size = 10
 ```

@@ -19,9 +19,3 @@ output "virtual_server_private_ipv4" {
   }
   description = "Show private IPv4 addresses of all virtual servers."
 }
-output "storage" {
-  value = {
-    for vol in hcloud_volume.master : vol.name => vol
-  }
-  description = "Show storage volumes of all virtual servers."
-}

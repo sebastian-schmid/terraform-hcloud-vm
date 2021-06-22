@@ -75,21 +75,6 @@ resource "hcloud_server_network" "private_network" {
   ]
 }
 
-# add volume to server
-resource "hcloud_volume" "master" {
-  for_each = var.vms
-
-  name = var.volume_name
-  size = var.volume_size
-  server_id = hcloud_server.vms[each.key].id
-  automount = true
-  format = var.volume_filesystem
-
-  depends_on = [
-    hcloud_server.vms
-  ]
-}
-
 # generate inventory file for ansible
 resource "local_file" "hosts" {
   content = templatefile("${path.module}/templates/hosts.tpl",
@@ -99,14 +84,4 @@ resource "local_file" "hosts" {
     }
   )
   filename = "${var.ansible_inventory_path}/${var.ansible_inventory_filename}"
-}
-
-# generate variable file for ansible
-resource "local_file" "volume" {
-  content = templatefile("${path.module}/templates/volume_linux_device.tpl",
-    {
-      volumes = hcloud_volume.master
-    }
-  )
-  filename = "${var.ansible_inventory_path}/${var.ansible_volumes_filename}"
 }
