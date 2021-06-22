@@ -14,8 +14,8 @@ output "virtual_server_public_ipv6" {
 }
 output "virtual_server_private_ipv4" {
   value = {
-    for vm in hcloud_server.vms :
-    vm.name => vm.network.*.ip
+    for net in hcloud_server_network.private_network :
+    "Private IPv4" => net.ip
   }
   description = "Show private IPv4 addresses of all virtual servers."
 }
