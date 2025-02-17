@@ -40,7 +40,7 @@ vms = {
     name               = "playground.somedomain.de"
     private_ip_address = "10.10.0.2"
     server_type        = "cx11"
-    image              = "debian-10"
+    image              = "debian-12"
     location           = "fsn1"
     backups            = false
   },
